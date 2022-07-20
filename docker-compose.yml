@@ -7,10 +7,9 @@ services:
     restart: always
     volumes:
       - postgres-ssl-data:/var/lib/postgresql/data
-      - ./postgresql.conf:/var/lib/postgresql/data/postgresql.conf
-      - ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
     ports:
       - 5433:5432
+      - 5434:8000
     environment:
       TZ: "Asia/Kolkata"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-root}"
